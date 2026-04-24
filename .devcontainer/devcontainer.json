@@ -1,0 +1,22 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+    "postCreateCommand": "sh .devcontainer/devcontainer_setup.sh",
+
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "charliermarsh.ruff",
+                "matangover.mypy"
+            ],
+            "settings": {
+                "terminal.integrated.copyOnSelection": true,
+                "mypy.runUsingActiveInterpreter": true,
+                "python.defaultInterpreterPath": "/home/vscode/.local/share/uv/python/cpython-3.12.*/bin/python3.12"
+            }
+        }
+    }
+}
