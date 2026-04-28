@@ -1,9 +1,10 @@
 """Add some features to the loaded data."""
+
 import numpy as np
 import pandas as pd
 
 
-def add_features(df):
+def add_features(df: pd.DataFrame) -> pd.DataFrame:
     """Add some features to our data.
 
     Parameters
@@ -27,7 +28,7 @@ def add_features(df):
     return df
 
 
-def _check_is_dog(animal_type):
+def _check_is_dog(animal_type: pd.Series) -> pd.Series:
     """Check if the animal is a dog, otherwise return False.
 
     Parameters
@@ -50,7 +51,7 @@ def _check_is_dog(animal_type):
     return is_dog
 
 
-def _check_has_name(name):
+def _check_has_name(name: pd.Series) -> pd.Series:
     """Check if the animal is not called 'unknown'.
 
     Parameters
@@ -68,7 +69,7 @@ def _check_has_name(name):
     return name.str.lower() != "unknown"
 
 
-def _get_sex(sex_upon_outcome):
+def _get_sex(sex_upon_outcome: pd.Series) -> pd.Series:
     """Determine if the sex was 'Male', 'Female' or unknown.
 
     Parameters
@@ -90,7 +91,7 @@ def _get_sex(sex_upon_outcome):
     return sex
 
 
-def _get_neutered(sex_upon_outcome):
+def _get_neutered(sex_upon_outcome: pd.Series) -> pd.Series:
     """Determine if an animal was intact or not.
 
     Parameters
@@ -113,7 +114,7 @@ def _get_neutered(sex_upon_outcome):
     return neutered
 
 
-def _get_hair_type(breed):
+def _get_hair_type(breed: pd.Series) -> pd.Series:
     """Get hair type of a breed.
 
     Parameters
@@ -139,7 +140,7 @@ def _get_hair_type(breed):
     return hair_type
 
 
-def _compute_days_upon_outcome(age_upon_outcome):
+def _compute_days_upon_outcome(age_upon_outcome: pd.Series) -> pd.Series:
     """Compute age in days upon outcome.
 
     Parameters
