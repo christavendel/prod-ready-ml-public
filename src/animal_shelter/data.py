@@ -1,18 +1,23 @@
-import pandas as pd
+"""Load the data need for the animal shelter project."""
+
 import re
 
+import pandas as pd
 
-def load_data(path):
+
+def load_data(path: str) -> pd.DataFrame:
     """Load the data and convert the column names.
 
     Parameters
     ----------
     path : str
         Path to data
+
     Returns
     -------
     df : pandas.DataFrame
         DataFrame with data
+
     """
     df = (
         pd.read_csv(path, parse_dates=["DateTime"])
@@ -23,7 +28,7 @@ def load_data(path):
     return df
 
 
-def convert_camel_case(name):
+def convert_camel_case(name: str) -> str:
     """Convert camelCaseString to snake_case_string."""
     s1 = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", name)
     return re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1).lower()
