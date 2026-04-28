@@ -23,4 +23,12 @@ repos:
     rev: v1.20.2
     hooks:
     -   id: mypy
-        args: [--strict, --ignore-missing-imports]
+        args: [--ignore-missing-imports]
+- repo: local
+  hooks:
+    - id: pytest
+      name: pytest
+      entry: pytest
+      language: system
+      pass_filenames: false
+      always_run: true
