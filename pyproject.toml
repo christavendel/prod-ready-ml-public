@@ -21,4 +21,25 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "jupyter>=1.1.1",
+    "pre-commit>=4.6.0",
+    "ruff>=0.15.12",
 ]
+
+[tool.ruff.lint]
+extend-select = [
+  "UP", # pyupgrade
+  "D",  # pydocstyle
+  "N",  # PEP8 names
+  "I",  # isort
+  "TD"  # flake8 todos
+]
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+     ".venv"
+     ]
