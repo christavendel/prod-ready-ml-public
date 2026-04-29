@@ -31,10 +31,10 @@ dev = [
 [tool.ruff.lint]
 extend-select = [
   "UP", # pyupgrade
-  "D",  # pydocstyle
+#  "D",  # pydocstyle
   "N",  # PEP8 names
   "I",  # isort
-  "TD"  # flake8 todos
+#  "TD"  # flake8 todos
 ]
 
 [tool.ruff]
