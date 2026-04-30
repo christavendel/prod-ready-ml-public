@@ -8,10 +8,12 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "cli",
     "fastapi>=0.136.1",
     "matplotlib>=3.10.9",
     "pandas>=3.0.2",
     "pydantic-settings>=2.14.0",
+    "typer>=0.25.0",
     "uvicorn>=0.46.0",
 ]
 
@@ -40,6 +42,15 @@ extend-select = [
   "I",  # isort
 #  "TD"  # flake8 todos
 ]
+
+[tool.uv.workspace]
+members = [
+    "cli",
+    "packages/cli",
+]
+
+[tool.uv.sources]
+cli = { workspace = true }
 
 [tool.ruff]
 exclude = [

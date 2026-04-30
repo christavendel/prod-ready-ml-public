@@ -1,0 +1,18 @@
+[project]
+name = "cli"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Christa Vendel", email = "98890228+christavendel@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.25.0",
+]
+
+[project.scripts]
+my_cli = "cli.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
